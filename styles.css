@@ -2,34 +2,36 @@
     --speed: 0.3s;
     --gap: 10px;
 }
+
 * {
-	font-family:"JetBrains Mono",sans-serif;
-	color: rgba(255, 255, 255, 0.5);
-	box-sizing: border-box;
+    font-family: "JetBrains Mono", sans-serif;
+    color: rgba(255, 255, 255, 0.5);
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-
+/***********
+ * ELEMENTS
+ ***********/
 html {
-	scroll-behavior: smooth;
+    scroll-behavior: smooth;
     justify-content: center;
     min-height: 100%;
-    background-image: linear-gradient(0deg, rgba(252,251,228,1) 4%, rgba(158,216,198,1) 15%, rgb(35, 36, 90) 50%, rgb(0, 0, 0) 100%);
+    background-image: linear-gradient(0deg, rgba(252, 251, 228, 1) 4%, rgba(158, 216, 198, 1) 15%, rgb(35, 36, 90) 50%, rgb(0, 0, 0) 100%);
 }
 
 body {
     max-width: 900px;
     min-width: 330px;
     margin: 0 auto;
-    background: rgba(0,0,0,0.7);
-    background-image: linear-gradient(rgba(13, 14, 22,0.7),rgba(26, 28, 44, 0.7));}
-    
+    background: rgba(0, 0, 0, 0.7);
+    background-image: linear-gradient(rgba(13, 14, 22, 0.7), rgba(26, 28, 44, 0.7));
+}
 
 header {
-    padding-top: 26.95%; /* Use the same ratio as the image */
     position: relative;
-    min-height: 90px;
+    height: 220px;
 }
 
 header a {
@@ -42,30 +44,28 @@ header a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-	color: rgba(255, 255, 255, 0.75);
     font-size: 1.3em;
+    background-image: url("header_id2023.png");
+    background-size: cover;
+    background-position-x: -24px;
 }
 
-header img {
-    max-width: 100%;
-    max-height: 100%;
-    width: auto;
-    height: auto;
-}
 header span {
     position: absolute;
-    bottom: var(--gap);
+    bottom: 5px;
     right: var(--gap);
-    transition: color var(--speed) ease-in-out;
-}
-a, a svg {
-    display: block;
-    transition: color var(--speed) ease-in-out, fill var(--speed) ease-in-out;
-    color: rgba(255, 255, 255, 0.75);
-    fill: rgba(255, 255, 255, 0.75);;
+    color: rgb(191, 220, 247);
 }
 
-a:hover, a:hover svg {
+a,
+a svg {
+    transition: color var(--speed) ease-in-out, fill var(--speed) ease-in-out;
+    color: rgba(255, 255, 255, 0.75);
+    fill: rgba(255, 255, 255, 0.75);
+}
+
+a:hover,
+a:hover svg {
     color: rgba(146, 255, 240, 1);
     fill: rgba(146, 255, 240, 1);
 }
@@ -75,7 +75,48 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 0 var(--gap);
+    background: linear-gradient(rgb(0, 0, 0), rgba(26, 28, 44, 1), rgba(26, 28, 44, 0.8));
 }
+
+h2 {
+    color: rgba(255, 255, 255, 1);
+    margin-bottom: var(--gap);
+}
+
+h4 {
+    color: rgba(255, 255, 255, 1);
+}
+
+p {
+    clear: left;
+    font-size: 0.9em;
+    margin: var(--gap) 0;
+    overflow: hidden;
+}
+
+p a {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+article {
+    padding-bottom: var(--gap);
+}
+
+article h3,
+h3 a {
+    color: rgba(255, 255, 255, 1);
+}
+
+ul.styled {
+    list-style: initial;
+    padding-left: 40px;
+    margin-bottom: 20px;
+    list-style-type: square;
+}
+
+/***** 
+* MENU
+******/
 .menu {
     display: flex;
     flex: 1;
@@ -84,13 +125,15 @@ nav {
     align-items: center;
     height: 60px;
 }
-.menu li:last-child{
+
+.menu li:last-child {
     margin-left: auto;
 }
 
 #menu-toggle {
     visibility: hidden;
 }
+
 .menu-toggle {
     display: none;
     position: absolute;
@@ -98,23 +141,54 @@ nav {
     rotate: 0deg;
     cursor: pointer;
     position: absolute;
-    top: calc(var(--gap) * 2);
-    right: calc(var(--gap) * 2);
+    top: var(--gap);
+    right: var(--gap);
     z-index: 9999;
 }
 
-h2 {
-    color: rgba(255, 255,255,1);
-    margin-bottom: var(--gap);
+.event {
+    background-color: rgb(200, 200, 100);
 }
-p {
-    display: inline-block;
-    clear: left;
-    font-size: 0.9em;
-    margin: var(--gap) 0;
+
+.seminar {
+    background-color: rgb(136, 187, 255);
 }
-p a {
-    color: rgba(255,255,255,1);
+
+.deadline {
+    background-color: rgb(200, 10, 10);
+}
+
+.show {
+    background-color: rgb(100, 200, 100);
+}
+
+.music {
+    background-color: rgb(255, 136, 187);
+}
+
+.compo {
+    background-color: rgb(100, 200, 100);
+}
+
+.tt {
+    font-size: 75%;
+    padding: 0.25em 0.4em;
+    border-radius: 0.25rem;
+    color: rgb(0, 0, 0);
+}
+
+tr {
+    margin: 18px 0;
+}
+
+td {
+    padding-right: var(--gap);
+    padding-bottom: var(--gap);
+    vertical-align: top;
+}
+
+strong {
+    color: rgba(255, 255, 255, 1);
 }
 
 ul {
@@ -131,32 +205,47 @@ footer {
     margin-top: var(--gap);
     padding-bottom: 30px;
 }
+
 footer h3 {
     text-align: center;
     margin-bottom: var(--gap);
 }
+
 #footer-bottom {
     position: absolute;
     display: flex;
     align-items: flex-end;
     justify-content: center;
-    max-height: 300px;
-    min-height: 200px;
+    height: 400px;
     width: 100%;
     left: 0;
-    margin-top: -10px;
+    margin-top: -50px;
     background-image: url("bg_peaks.png");
     background-size: contain;
 }
 
 #reach {
+    background-color: rgba(26, 28, 44, 0.7);
     display: flex;
     flex-direction: column;
     align-items: stretch;
 }
-#partners ul {
-    margin-bottom: calc(var(--gap) * 2);
+
+#partners {
+    margin-top: calc(var(--gap) * 4);
 }
+
+#partners ul {
+    margin-bottom: calc(var(--gap) * 4);
+}
+
+#partners a {
+    display: block;
+}
+
+/* #partners svg {
+    fill: rgba(255, 255, 255, 1);
+} */
 
 
 footer ul {
@@ -177,6 +266,7 @@ footer ul {
     float: left;
     padding-right: 10px;
 }
+
 .visitors {
     background-color: rgba(26, 28, 44, 0.7);
     max-width: 90%;
@@ -187,13 +277,11 @@ footer ul {
 
 
 @media screen and (max-width: 785px) {
-    :root {
-        --gap: 5px;
-    }
 
     header a {
         font-size: 1em;
     }
+
     nav {
         position: fixed;
         display: block;
@@ -201,7 +289,9 @@ footer ul {
         padding: 0;
         z-index: 9999;
         pointer-events: none;
+        background: none;
     }
+
     .menu {
         position: absolute;
         top: 0;
@@ -226,18 +316,22 @@ footer ul {
         pointer-events: initial;
     }
 
-    .menu-toggle:checked + .menu-toggle + .menu {
+    .menu-toggle:checked+.menu-toggle+.menu {
         transform: translateX(0);
         opacity: 1;
     }
 
-    .menu-toggle:checked + .menu-toggle {
+    .menu-toggle:checked+.menu-toggle {
         opacity: 1;
         rotate: 90deg;
     }
+
     .pic {
         width: 100%;
+        padding-right: 0;
+        padding-bottom: var(--gap);
     }
+
     .visitors {
         column-count: 2;
     }
@@ -247,14 +341,30 @@ footer ul {
         justify-content: space-around;
         gap: calc(var(--gap) * 3);
     }
-   
-    #partners-main li {
+
+    #partners ul {
+        margin-bottom: calc(var(--gap) * 6);
+    }
+
+    #partners-main li,
+    #partners-sec li {
         flex: 1;
     }
 
     #partners-sec {
-        display: block;
-        column-count: 2;
-        margin: 0 auto;
+        flex-wrap: wrap;
+    }
+
+    #partners-sec a {
+        display: flex;
+        justify-content: center;
+    }
+
+    #footer-bottom {
+        font-size: 0.8em;
+        margin-top: -30px;
+        height: 150px;
+        padding: 0;
+        padding-bottom: var(--gap);
     }
 }
