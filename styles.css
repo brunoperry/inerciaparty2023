@@ -1,6 +1,10 @@
+/***********
+ * VARIABLES
+ ***********/
 :root {
     --speed: 0.3s;
     --gap: 10px;
+    --menu-height: 60px;
 }
 
 * {
@@ -45,9 +49,8 @@ header a {
     justify-content: center;
     align-items: center;
     font-size: 1.3em;
-    background-image: url("header_id2023.png");
+    background-image: url("imgs/header_id2023.webp");
     background-size: cover;
-    background-position-x: -24px;
 }
 
 header span {
@@ -70,12 +73,18 @@ a:hover svg {
     fill: rgba(146, 255, 240, 1);
 }
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 var(--gap);
-    background: linear-gradient(rgb(0, 0, 0), rgba(26, 28, 44, 1), rgba(26, 28, 44, 0.8));
+strong {
+    color: rgba(255, 255, 255, 1);
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+section {
+    padding: calc(var(--gap) * 2) var(--gap);
 }
 
 h2 {
@@ -107,6 +116,10 @@ h3 a {
     color: rgba(255, 255, 255, 1);
 }
 
+h3 {
+    color: rgba(255, 255, 255, 0.75);
+}
+
 ul.styled {
     list-style: initial;
     padding-left: 40px;
@@ -114,20 +127,86 @@ ul.styled {
     list-style-type: square;
 }
 
-/***** 
-* MENU
-******/
+/***********
+ * FORMS
+ ***********/
+form {
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--gap) * 2);
+}
+
+form small {
+    color: rgba(255, 255, 255, 0.75);
+    background-color: transparent;
+}
+
+form label {
+    color: rgba(255, 255, 255, 0.75);
+    background-color: transparent;
+}
+
+form * {
+    color: black;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--gap) / 2);
+    align-items: flex-start;
+    background-color: transparent;
+}
+
+form textarea {
+    width: 100%;
+    height: 100px;
+}
+
+form textarea,
+form input,
+form select {
+    padding: 5px;
+}
+
+form input[type="submit"] {
+    margin-top: calc(var(--gap) * 2);
+    padding: 5px 20px;
+}
+
+/***********
+ * MENU
+ ***********/
+nav {
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 var(--gap);
+    background: linear-gradient(rgb(0, 0, 0), rgba(26, 28, 44, 1), rgba(26, 28, 44, 0.8));
+}
+
 .menu {
     display: flex;
     flex: 1;
     gap: var(--gap);
-    justify-content: space-around;
     align-items: center;
-    height: 60px;
+    height: var(--menu-height);
 }
 
 .menu li:last-child {
     margin-left: auto;
+}
+
+.menu li a {
+    font-size: 0.95em;
+}
+
+.menu .active {
+    color: rgba(146, 255, 240, 1);
+    pointer-events: none;
 }
 
 #menu-toggle {
@@ -146,6 +225,9 @@ ul.styled {
     z-index: 9999;
 }
 
+/***********
+ * TIMETABLE
+ ***********/
 .event {
     background-color: rgb(200, 200, 100);
 }
@@ -187,20 +269,9 @@ td {
     vertical-align: top;
 }
 
-strong {
-    color: rgba(255, 255, 255, 1);
-}
-
-ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-section {
-    padding: calc(var(--gap) * 2) var(--gap);
-}
-
+/***********
+ * FOOTER
+ ***********/
 footer {
     margin-top: var(--gap);
     padding-bottom: 30px;
@@ -211,16 +282,22 @@ footer h3 {
     margin-bottom: var(--gap);
 }
 
+footer ul {
+    display: flex;
+    justify-content: space-around;
+    gap: var(--gap);
+}
+
 #footer-bottom {
     position: absolute;
     display: flex;
     align-items: flex-end;
     justify-content: center;
-    height: 400px;
+    height: 300px;
     width: 100%;
     left: 0;
     margin-top: -50px;
-    background-image: url("bg_peaks.png");
+    background-image: url("imgs/bg_peaks.webp");
     background-size: contain;
 }
 
@@ -229,6 +306,13 @@ footer h3 {
     display: flex;
     flex-direction: column;
     align-items: stretch;
+}
+
+#reach li a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 }
 
 #partners {
@@ -243,24 +327,9 @@ footer h3 {
     display: block;
 }
 
-/* #partners svg {
-    fill: rgba(255, 255, 255, 1);
-} */
-
-
-footer ul {
-    display: flex;
-    justify-content: space-around;
-    gap: var(--gap);
-}
-
-#reach li a {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-}
-
+/***********
+ * CLASSES
+ ***********/
 .pic {
     width: 40%;
     float: left;
@@ -275,13 +344,36 @@ footer ul {
     padding: var(--gap);
 }
 
+/***********
+ * PARTICIPATE
+ ***********/
+#top {
+    padding: var(--gap);
+    display: flex;
+    flex-wrap: wrap;
+    gap: calc(var(--gap) * 2);
+}
 
-@media screen and (max-width: 785px) {
+.top {
+    float: right;
+    font-size: 0.65em;
+    text-decoration: none;
+}
 
+@media screen and (max-width: 875px) {
+
+    /***********
+     * ELEMENTS
+     ***********/
     header a {
         font-size: 1em;
+        background-position-x: -14px;
+        height: 185px;
     }
 
+    /***********
+     * MENU
+     ***********/
     nav {
         position: fixed;
         display: block;
@@ -292,6 +384,14 @@ footer ul {
         background: none;
     }
 
+    .menu li:last-child {
+        display: flex;
+        margin-top: calc(var(--gap) * 2);
+        flex-direction: column;
+        gap: calc(var(--gap) * 2);
+        align-items: flex-end;
+    }
+
     .menu {
         position: absolute;
         top: 0;
@@ -299,7 +399,7 @@ footer ul {
         flex-direction: column;
         align-items: flex-end;
         justify-content: flex-start;
-        background-color: black;
+        background-color: rgba(0, 0, 0, 0.9);
         width: 100%;
         height: 100%;
         transform: translateX(100%);
@@ -326,16 +426,17 @@ footer ul {
         rotate: 90deg;
     }
 
-    .pic {
-        width: 100%;
-        padding-right: 0;
-        padding-bottom: var(--gap);
+    /***********
+    * TIMETABLE
+    ***********/
+    .timetable h2 {
+        font-size: 1.2em;
+        margin-top: calc(var(--gap) * 2);
     }
 
-    .visitors {
-        column-count: 2;
-    }
-
+    /***********
+     * FOOTER
+     ***********/
     footer ul {
         display: flex;
         justify-content: space-around;
@@ -361,10 +462,31 @@ footer ul {
     }
 
     #footer-bottom {
-        font-size: 0.8em;
         margin-top: -30px;
-        height: 150px;
+        height: 128px;
         padding: 0;
         padding-bottom: var(--gap);
+    }
+
+    #footer-bottom p {
+        font-size: 0.62em;
+    }
+
+    /***********
+    * CLASSES
+    ***********/
+    .pic {
+        width: 100%;
+        padding-right: 0;
+        padding-bottom: var(--gap);
+    }
+
+    .visitors {
+        column-count: 2;
+        padding: var(--gap) 0;
+    }
+
+    .visitors li {
+        font-size: 0.8em;
     }
 }
