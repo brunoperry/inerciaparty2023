@@ -1,0 +1,226 @@
+<%- include('partials/head') %>
+<%- include('partials/headerNav', {menu_item:5, logged:isLogged}) %>
+
+<ul id="top">
+  <li><a href="#realtime">Competitions</a></li>
+  <li><a href="#graphics">Showcases</a></li>
+  <li><a href="#livecoding">Live Coding</a></li>
+  <li><a href="#rules">General Rules</a></li>
+</ul>
+
+<section>
+  <h2>🏅 Anyone can participate! <a href="#top" class="top">Top 🔼</a></h2>
+  <p>Regardless of skill level and prior experience with the demoscene, participating with a production entry is a
+    tradition
+    at demoparties and we strongly encourage everyone to submit an entry. You're still welcome to attend even if
+    you don't
+    but it's more fun if you bring something.</p>
+</section>
+
+<section>
+  <h2>💡 Competitions vs Showcases<a href="#top" class="top">Top 🔼</a></h2>
+  <p>Demoparties typically have <a href="https://2023.inercia.pt/index.php?page=Participation#realtime">competitions</a> in many categories
+    that are voted by the public to find a winner,
+    this year at
+    Inércia we are only having 4 competitions, all of them focused around realtime executable entries. For other
+    traditional
+    demoscene categories such as graphics, audio and wild (and realtime executable entries that do not want to
+    be voted
+    upon) we will have <a href="https://2023.inercia.pt/index.php?page=Participation#graphics">showcases</a>
+    which will not be voted / ranked, instead we will have a panel of expert
+    demosceners talk
+    about each entry submitted imediately after the showcase to contextualize it for the viewers.</p>
+  <p>This is an experiment, we hope it encourages more people to participate regardless of skill level. It allows
+    people to
+    focus on a single high quality production instead of many competition fillers. If you're a newcomer, on the
+    showcases
+    you will get relevant and encouraging feedback on how you can improve your craft. If you're a seasoned
+    demoscener and
+    dislike the voting side of competitions, on the showcases your entry will get properly contextualized by a
+    panel of
+    demoscene experts, explaining its merits and demoscene culture significance to the viewers.</p>
+  <p>We are also organizing a few <a href="https://2023.inercia.pt/index.php?page=Participation#livecoding">live
+      coding</a> sessions where you can participate (locally or remotely).
+  </p>
+</section>
+
+<section id="realtime">
+  <h2>✨ Realtime Competitions<a href="#top" class="top">Top 🔼</a></h2>
+  <p>We will have 4 competitions at Inércia this year. All of them for realtime executable entries:</p>
+  <ul class="styled">
+    <li><strong>Demo</strong> (no size limit, open to all modern and retro platforms)</li>
+    <li><strong>Intro</strong> (1kb ~ 64kb in a single executable file size, open to all modern and retro
+      platforms)</li>
+    <li><strong>Tiny Intro</strong> (for tiny size intros of any size category up to 512b, open to all
+      platforms)</li>
+    <li>Fantasy Console 512b (continuing the legacy from <a href="https://demozoo.org/parties/4406/#competition_17510">last years competition</a>, dedicated for
+      entries on fantasy console
+      platforms with cart size of maximum 512 bytes)</li>
+  </ul>
+  <p>Please submit a zip with your entry: it should contain the entry itself and a short text file explaining the
+    platform,
+    tools, techniques and references used. This text file should also explain the best way to replay the entry,
+    especially
+    if it targets a non Windows PC platform and needs specific settings. if it's targetting a platform that we
+    might
+    potentially play incorrectly or using an emulator against your wishes please also include a video capture of
+    it, 1080p60
+    prefered for modern platforms, or whatever is the best quality capture for your target platform (50hz also
+    fine).</p>
+  <p>The competition results will be determined by public voting. Anyone who logs in to our party system can vote
+    on the
+    entries (at party location or remote)</p>
+</section>
+
+<section id="graphics">
+  <h2>🎨 Graphics Showcase<a href="#top" class="top">Top 🔼</a></h2>
+  <p>We will have a screening block dedicated to graphics productions. We are looking for submissions of the
+    following kind:</p>
+  <ul class="styled">
+    <li>Text art, be it ASCII, ANSI, PETSCII, ATASCII, TELETEXT, etc</li>
+    <li>Pixel art, limited palette and canvas resolution, using standards from retro machines or fantasy
+      consoles</li>
+    <li>Photo art, typically a photo with minor retouches and color correction but photoshop collages also
+      welcome</li>
+    <li>3D model graphics, static 3d model scene that can be viewed from different viewpoints using latest
+      version of Blender or
+      Foxotron</li>
+    <li>Rendered graphics, images rendered out of 3d modelling tools such as Blender, 3DS Max, povray, etc</li>
+    <li>Voxel art, images made with voxel editing programs such as Magica Voxel</li>
+    <li>Freestyle graphics, painted by hand, scanned, drawn digitally, vector or brush, whatever combination you
+      use</li>
+    <li>Fractal art, generated with fractal generator tools</li>
+    <li>AI art, be it either text prompt, neural style transfer or any combined method you use</li>
+    <li>Executable graphics, 4kb code executable that renders a single static image</li>
+    <li>JPEG XL art, made solely with JPEG XL encoding predictor operators</li>
+    <li>Animated GIF, short looping GIF animation</li>
+    <li>etc</li>
+  </ul>
+  <p>One entry per participant allowed, choose wisely what you want to focus on! Some leeway on this rule to also
+    allow
+    collaborations but please don't abuse it. Please submit a zip with your entry: it should contain the entry
+    itself, a PNG
+    version if it's a strange format we might otherwise display incorrectly, 3-4 steps of your work in progress
+    and a short
+    text file explaining the techniques and references used. This text file shold also explain the best way to
+    display the
+    entry if it needs a special viewer and special settings.</p>
+</section>
+
+<section>
+  <h2>🎶 Music Showcase<a href="#top" class="top">Top 🔼</a></h2>
+  <p>We will have a screening block dedicated to music productions. Max 5 mins play time for each track. We are
+    looking for
+    submissions of the following kind:</p>
+  <ul class="styled">
+    <li>Tracked music, composed using tracker software, for whatever target platform you use</li>
+    <li>Executable music, 32kb executable that generates the audio</li>
+    <li>Oldschool / chiptune music, playing from any retro machine with 1bit / 8bit / 16bit sound chips</li>
+    <li>Fantasy console music, music playing from fantasy consoles</li>
+    <li>Streaming music, an mp3 rendered usually from a modern DAW</li>
+    <li>Recording of your live music performance</li>
+    <li>Live music, beatboxing, singing, improv rap, easy instrument to setup</li>
+    <li>etc</li>
+  </ul>
+  <p>One entry per participant allowed, choose wisely what you want to focus on! Some leeway on this rule to also
+    allow
+    collaborations but please don't abuse it. We accept music of all genres. Please submit a zip with your
+    entry: it should
+    contain the entry itself, an mp3 version of it if it's in a format we might potentially play incorrectly and
+    a short
+    text file explaining the techniques and references used. This text file should also explain the best way to
+    play the
+    entry if it needs a special player and special settings.</p>
+</section>
+
+<section>
+  <h2>🐯 Wild Showcase<a href="#top" class="top">Top 🔼</a></h2>
+  <p>We will have a screening block dedicated to everything else that doesn't quite fit the other categories. Max
+    5 mins play
+    time for each entry. We are looking for submissions of the following kind:</p>
+  <ul class="styled">
+    <li>Video Editing</li>
+    <li>Animation</li>
+    <li>Trailers / Reels</li>
+    <li>Live performance</li>
+    <li>Memes</li>
+    <li>New demotool showcase</li>
+    <li>New tech showcase</li>
+    <li>New electronics project presentation</li>
+    <li>New diskmag or musicdisk releases</li>
+    <li>Lightning talks</li>
+    <li>Standup comedy</li>
+    <li>Interactive art installation presentation</li>
+    <li>Games, previews and final versions also accepted</li>
+    <li>GLSL / Shadertoy scenes</li>
+    <li>Demos and Intros not up for voting</li>
+    <li>Demos of esoteric / conceptual platforms</li>
+    <li>Electronic badge demos</li>
+    <li>etc</li>
+  </ul>
+  <p>One entry per participant allowed, choose wisely what you want to show us! Please submit a zip with your
+    entry: the
+    binaries if it's an executable release, a video capture if it's not. Should also contain a short text file
+    explaining
+    what it is, the techniques and references used and how to play it.</p>
+</section>
+
+<section id="livecoding">
+  <h2>⌨ Live Coding<a href="#top" class="top">Top 🔼</a></h2>
+  <h3>Shader Royale Jam</h3>
+  <p>Using latest version of <a href="https://github.com/TheNuSan/Bonzomatic/releases">Bonzomatic with network
+      support</a> we gather as many GLSL coding brave souls as we can find, remote
+    participation welcome, and let them jam for 1 hour with a background music set on Friday night. No talking
+    or voting
+    involved this time, just have fun.</p>
+  <h3>Byte Jam</h3>
+  <p>Using latest version of <a href="https://github.com/glastonbridge/TIC-80/releases">TIC80 with network and FFT
+      function</a> we gather as many LUA coding brave souls as we
+    can find,
+    remote participation welcome, and let them jam for 1 hour with a background music set on Sunday morning. No
+    talking or
+    voting involved, just have fun.</p>
+</section>
+
+<section id="rules">
+  <h2>📜 General Rules<a href="#top" class="top">Top 🔼</a></h2>
+  <h3>Original content</h3>
+  <p>All productions submitted must be original releases of your own copyright and not previously made public.
+    Sampling /
+    remixing to create derivative work of someone else is accepted but within reason, blatant plagiarism has no
+    creative
+    value. When submitting the production please list your sources and tools explicitly, they will be shown on
+    the
+    information slide and are critical to contextualize your entry to the viewers.</p>
+  <h3>Compo machine specs:</h3>
+  <p>OS : Windows 10 (with latest updates) <br>
+    Chipset : Z790 <br>
+    CPU : Intel 13600K (14C/20T) <br>
+    RAM : 32GB DDR5-6400MHz <br>
+    GFX : RTX3080Ti 12GB GDDR6X <br>
+    Storage : NVME Gen4.</p>
+  <p>If your production targets another platform, please also provide a video recording of it, if you can't do so
+    please come
+    talk with us as soon as possible so we can try to figure out how to capture its signal with acceptable
+    quality.</p>
+  <h3>Production licenses</h3>
+  <p>All productions entered will be distributed free for download on the internet after the event. By submitting
+    your
+    production to our party website you are agreeing to this distribution. The copyright remains yours ofcourse,
+    and you are
+    free to select what license your work uses, if you prefer something else besides Creative Commons BY-NC-SA
+    that we apply
+    by default. But please be aware your submission will be archived and made public. We might also use your
+    work to promote
+    future editions of Inércia. Please only submit your entry if you're ok with this.</p>
+  <h3>Disclaimer</h3>
+  <p>The organization reserves the right to not screen your submission for any reason they see fit, will be
+    enforced in case
+    of productions which are deeemed innapropriately offensive, immoral or illegal according to the Portuguese
+    law.</p>
+
+
+
+</section>
+
+<%- include('partials/footer') %>

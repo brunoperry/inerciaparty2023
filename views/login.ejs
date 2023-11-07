@@ -1,0 +1,18 @@
+<%- include('partials/head') %>
+<%- include('partials/headerNav', {menu_item:8, logged:isLogged}) %>
+
+<section>
+  <h2>Login</h2>
+  <p>To use the party system please signin using SceneID by clicking the button below.</p>
+  <a href="/doLogin"><img alt="scene id" src="imgs/signin_sceneid.svg" class="login-img"></a>
+  <p>SceneID is a single sign-in system (similar to google, apple or facebook login), it is managed by Scene.org
+    Ry, a
+    non-profit focused on promoting and archiving demoscene productions. It follows common privacy protection
+    best
+    practices, does not sell your data to any 3rd party and is used by <a href="https://id.scene.org/sites/">multiple demoscene related websites</a>.</p>
+  <p>tl;dr: it might look dodgy to new users but it is a legitimate login system and is probably safer then us
+    storing your
+    email and password on our own database.</p>
+</section>
+
+<%- include('partials/footer') %>

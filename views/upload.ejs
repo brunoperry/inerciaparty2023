@@ -1,0 +1,58 @@
+<%- include('partials/head') %>
+<%- include('partials/headerNav', {menu_item:9, logged:isLogged}) %>
+
+<section>
+  <h2>Upload your entry</h2>
+  <form action="">
+
+    <div class="form-group">
+      <label for="compo">Compo:</label>
+      <select id="compo" name="compo" required="yes">
+        <option value="">-- Please select a compo:</option>
+        <option value="2">Music Showcase</option>
+        <option value="1">Graphics Showcase</option>
+        <option value="7">Wild Showcase</option>
+        <option value="5">Tiny Intro Competition</option>
+        <option value="6">Fantasy Console 512b Competition</option>
+        <option value="4">Intro Competition</option>
+        <option value="3">Demo Competition</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="title">Product title:</label>
+      <input id="title" name="title" required="yes" type="text" />
+    </div>
+    <div class="form-group">
+      <label for="author">Author:</label>
+      <input id="author" name="author" required="yes" type="text" />
+    </div>
+    <div class="form-group">
+      <label for="comment">Comment: <small>(this will be shown on the compo slide)</small></label>
+      <textarea id="comment" name="comment" required="yes"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="orgacomment">Comment for the organizers: <small>(this will NOT be shown
+          anywhere)</small></label>
+      <textarea id="orgacomment" name="orgacomment" required="yes"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="entryfile">Uploaded file:
+        <small>
+          (max. 150M - if you want to upload
+          a bigger file, just upload a dummy text file here and ask the organizers!)
+        </small></label>
+      <input id="entryfile" name="entryfile" type="file" required="yes">
+    </div>
+
+    <div class="form-group">
+      <label for="screenshot">Screenshot: <small>(optional - JPG, GIF or PNG!)</small></label>
+      <input id="screenshot" name="screenshot" type="file" accept="image/*">
+    </div>
+
+    <div class="form-group">
+      <input type="submit" value="Go!">
+    </div>
+  </form>
+</section>
+
+<%- include('partials/footer') %>

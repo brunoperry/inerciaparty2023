@@ -1,0 +1,36 @@
+<body>
+  <header>
+    <a href="/">
+      <span>Inércia 2023 (1-3 Dec)</span>
+    </a>
+  </header>
+  <nav>
+    <input type="checkbox" id="menu-toggle" class="menu-toggle">
+    <label for="menu-toggle" class="menu-toggle">
+      <svg width="48" height="48" viewBox="0 0 12.7 12.7" fill="white">
+        <rect width="12.7" height="3.175" x="0" y="0" />
+        <rect width="12.7" height="3.175" x="9.5367433e-08" y="4.7624998" />
+        <rect width="12.7" height="3.175" x="9.5367433e-08" y="9.5249996" />
+      </svg>
+    </label>
+
+    <ul class="menu">
+      <li><a <% if(menu_item==1){ %>class="active" <% } %> href="/news">NEWS</a></li>
+      <li><a <% if(menu_item==2){ %>class="active" <% } %>href="/about">ABOUT</a></li>
+      <li><a <% if(menu_item==3){ %>class="active" <% } %>href="/travel">TRAVEL</a></li>
+      <li><a <% if(menu_item==4){ %>class="active" <% } %>href="/location">LOCATION</a></li>
+      <li><a <% if(menu_item==5){ %>class="active" <% } %>href="/participate">PARTICIPATE!</a></li>
+      <li><a <% if(menu_item==6){ %>class="active" <% } %>href="/seminars">SEMINARS</a></li>
+      <li><a <% if(menu_item==7){ %>class="active" <% } %>href="/timetable">TIMETABLE</a></li>
+
+      <% if(!logged){ %>
+      <li><a <% if(menu_item==8){ %>class="active" <% } %>href="/login">LOGIN / REGISTER</a></li>
+      <% } else { %>
+      <li>
+        <a <% if(menu_item==9){ %> class="active" <% } %> href="/upload">UPLOAD ENTRY</a>
+        <a <% if(menu_item==10){ %>class="active" <% } %> href="/update">UPDATE ENTRIES</a>
+        <a href="/logout">LOGOUT</a>
+      </li>
+      <% } %>
+    </ul>
+  </nav>

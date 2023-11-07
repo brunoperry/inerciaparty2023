@@ -1,0 +1,8 @@
+assets/
+node_modules/
+Dockerfile
+test.yaml
+README.md
+.git
+.gitignore
+.dockerignore

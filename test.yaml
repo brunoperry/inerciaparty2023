@@ -1,0 +1,80 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: comm-nginx
+  labels:
+    app: comm-nginx
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: comm-nginx
+  template:
+    metadata:
+      labels:
+        app: comm-nginx
+    spec:
+      containers:
+        - name: commbrunoperrynet
+          image: docker.brunoperry.net/commbrunoperrynet:latest
+          ports:
+            - containerPort: 80
+      imagePullSecrets:
+        - name: regcred
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: comm-nginx-service
+spec:
+  selector:
+    app: comm-nginx
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3001
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: comm-tls
+  namespace: default
+spec:
+  secretName: comm-tls
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  dnsNames:
+    - comm.brunoperry.net
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: comm-nginx-ingress-secure
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: Host(`comm.brunoperry.net`)
+      kind: Rule
+      services:
+        - name: comm-nginx-service
+          port: 80
+  tls:
+    secretName: comm-tls
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: comm-nginx-ingress
+spec:
+  entryPoints:
+    - web
+  routes:
+    - match: Host(`comm.brunoperry.net`)
+      kind: Rule
+      middlewares:
+        - name: redirect-http-to-https
+      services:
+        - name: comm-nginx-service
+          port: 80
