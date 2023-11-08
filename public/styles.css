@@ -1,3 +1,11 @@
+@font-face {
+    font-family: "JetBrains Mono";
+    src: url("font/JetBrainsMono-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
 /***********
  * VARIABLES
  ***********/
@@ -8,7 +16,7 @@
 }
 
 * {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: "JetBrains Mono", sans-serif;
     color: rgba(255, 255, 255, 0.5);
     box-sizing: border-box;
     margin: 0;
@@ -22,6 +30,7 @@ html {
     scroll-behavior: smooth;
     justify-content: center;
     min-height: 100%;
+    background: rgb(0, 0, 0);
     background-image: linear-gradient(0deg, rgba(252, 251, 228, 1) 4%, rgba(158, 216, 198, 1) 15%, rgb(35, 36, 90) 50%, rgb(0, 0, 0) 100%);
 }
 
@@ -40,23 +49,22 @@ header {
 
 header a {
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    inset: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     font-size: 1.3em;
-    background-image: url("imgs/header_id2023.webp");
+    background-image: url("imgs/header_id2023_2000x539.webp");
     background-size: cover;
 }
 
 header span {
     position: absolute;
     bottom: 5px;
+    left: var(--gap);
     right: var(--gap);
+    text-align: right;
     color: rgb(191, 220, 247);
 }
 
@@ -135,7 +143,7 @@ img {
 
 img.icon {
     width: 21px;
-    height: 21px;
+    /* height: 21px; */
 }
 
 /***********
@@ -204,7 +212,9 @@ nav {
     flex: 1;
     gap: var(--gap);
     align-items: center;
-    height: var(--menu-height);
+    min-height: var(--menu-height);
+    flex-wrap: wrap;
+    padding: 10px 0;
 }
 
 .menu li:last-child {
@@ -349,15 +359,22 @@ footer ul {
 
 .visitors {
     background-color: rgba(26, 28, 44, 0.7);
-    max-width: 90%;
     column-count: 3;
     margin: 0 auto;
     padding: var(--gap);
 }
 
+.visitors li img {
+    height: 15px;
+}
+
 .login-img {
     max-width: 450px;
     max-height: 72px;
+}
+
+.hidden {
+    visibility: hidden;
 }
 
 /***********
@@ -381,65 +398,30 @@ footer ul {
     /***********
      * ELEMENTS
      ***********/
+    header {
+        position: relative;
+        height: 185px;
+    }
+
     header a {
         font-size: 1em;
         background-position-x: -14px;
-        height: 185px;
+        background-image: url("imgs/header_id2023_800x216.webp");
     }
 
     /***********
      * MENU
      ***********/
-    nav {
-        position: fixed;
-        display: block;
-        inset: 0;
-        padding: 0;
-        z-index: 9999;
-        pointer-events: none;
-        background: none;
+    .menu {
+        justify-content: center;
     }
 
     .menu li:last-child {
-        display: flex;
-        margin-top: calc(var(--gap) * 2);
-        flex-direction: column;
-        gap: calc(var(--gap) * 2);
-        align-items: flex-end;
+        margin-left: 0;
     }
 
-    .menu {
-        position: absolute;
-        top: 0;
-        left: 0;
-        flex-direction: column;
-        align-items: flex-end;
-        justify-content: flex-start;
-        background-color: rgba(0, 0, 0, 0.9);
-        width: 100%;
-        height: 100%;
-        transform: translateX(100%);
-        transition: transform 0.3s ease-in-out;
-        gap: calc(var(--gap) * 2);
-        padding: var(--gap);
-        padding-top: 82px;
-        pointer-events: initial;
-    }
-
-    .menu-toggle {
-        display: block;
-        opacity: 0.5;
-        pointer-events: initial;
-    }
-
-    .menu-toggle:checked+.menu-toggle+.menu {
-        transform: translateX(0);
-        opacity: 1;
-    }
-
-    .menu-toggle:checked+.menu-toggle {
-        opacity: 1;
-        rotate: 90deg;
+    .menu li a {
+        font-size: 0.9em;
     }
 
     /***********
@@ -504,5 +486,6 @@ footer ul {
 
     .visitors li {
         font-size: 0.8em;
+        margin-bottom: 3px;
     }
 }

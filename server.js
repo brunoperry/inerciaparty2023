@@ -2,6 +2,7 @@ import express from "express";
 import ejs from "ejs";
 import { fileURLToPath } from "url"; // Import the 'fileURLToPath' function from the 'url' module
 import path from "path";
+import compression from "compression";
 
 const __filename = fileURLToPath(import.meta.url); // Get the current file's path
 const __dirname = path.dirname(__filename); // Get the directory name
@@ -18,6 +19,7 @@ app.set("views", path.join(__dirname, "views")); // Specify the directory where 
 // Register EJS as the view engine
 app.engine("ejs", ejs.renderFile);
 
+app.use(compression());
 // Serve static assets from the 'public' directory
 app.use(express.static(path.join(__dirname, "public")));
 
